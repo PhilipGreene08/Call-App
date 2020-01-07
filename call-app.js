@@ -2,18 +2,18 @@
 let calls = [{
     number: 1,
     type: 'Inbound',
-    oppertunity: true
+    opportunity: true
 
 },
 {
     number: 2,
     type: 'Outbound',
-    oppertunity: true
+    opportunity: true
 },
 {
     number: 3,
     type: 'Inbound',
-    oppertunity: false
+    opportunity: false
 }]
 
 
@@ -26,3 +26,16 @@ let currentCallTotal = function (inbound, outbound) {
     counter.textContent = totalNumberCalls //sets our number of calls to our display
     document.querySelector('#call-stats').appendChild(counter) //renders to the bottom of our body
 }
+
+//Filter for good opportunities coming from calls
+let goodOpportunities = calls.filter(function (call) {
+   return call.opportunity
+})
+
+//Display the number of good opps that came from calls in a sentence
+let opportunitiesSummery = document.createElement('p')
+opportunitiesSummery.textContent = `You recieved ${goodOpportunities.length} good opportunities today`
+document.querySelector('#call-stats').appendChild(opportunitiesSummery)
+
+//Clear Calls----------------- Double check this works
+//document.querySelector('#clear-call').innerHTML = ''
