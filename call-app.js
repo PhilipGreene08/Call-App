@@ -16,7 +16,15 @@ let calls = [{
     opportunity: false
 }]
 
+const getSavedCalls = function () {
+    let callsJSON = localStorage.getItem('calls')
 
+    if (callsJSON !== 0) {
+        return JSON.parse('callsJSON')
+    } else {
+        []
+    }
+}
 
 //Current Call total (inbound + outbound)
 let totalNumberCalls = 0 //Default 0
@@ -29,7 +37,7 @@ let currentCallTotal = function (inbound, outbound) {
 
 //Filter for good opportunities coming from calls
 let goodOpportunities = calls.filter(function (call) {
-   return call.opportunity
+    return call.opportunity
 })
 
 //Display the number of good opps that came from calls in a sentence
@@ -39,3 +47,4 @@ document.querySelector('#call-stats').appendChild(opportunitiesSummery)
 
 //Clear Calls----------------- Double check this works
 //document.querySelector('#clear-call').innerHTML = ''
+
