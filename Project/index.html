@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Call List</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div name='title'>
+            <h1>People I Need to Call</h1>
+        </div>
+        <div class="client-add">
+            <form class="name-form">
+                <div id="input-field">
+                    <label for="name-form">New Client:</label>
+                    <input type="text" name="new-client-name" id="new-client-name">
+                </div>
+                <input type="submit" value="Add Client Name" class="btn">
+
+            </form>
+        </div>
+        <div class="container-actions">
+            <h1 id="container-title">To Call List</h1>
+            <div class="input-field">
+                <label for="filter">Filter Names: </label>
+                <input type="text" name="filter" id="filter">
+            </div>
+            <ul class="collection"></ul>
+            <a href="#" class="clear-names" type="submit"><button>Clear Names</button></a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
